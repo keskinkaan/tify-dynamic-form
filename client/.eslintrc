@@ -1,0 +1,24 @@
+{
+	"root": true,
+	"parser": "@typescript-eslint/parser",
+	"parserOptions": {
+		"project": ["./tsconfig.json"]
+	},
+	"extends": [
+		"eslint:recommended",
+		"plugin:@typescript-eslint/recommended",
+		"plugin:@typescript-eslint/recommended-requiring-type-checking",
+		"react-app"
+	],
+	"rules": {
+		"no-console": 1,
+		"import/prefer-default-export": 1,
+		"@typescript-eslint/no-unused-vars": 1,
+		"@typescript-eslint/no-explicit-any": 1,
+		"@typescript-eslint/no-empty-function": 0,
+		"@typescript-eslint/restrict-template-expressions": 1
+	},
+	"env": {
+		"browser": true
+	}
+}
