@@ -1,0 +1,18 @@
+#dependencies
+/client/node_modules
+/server/node_modules
+
+#production
+/client/build
+/server/build
+
+# Editor directories and files
+/client/.vscode/*
+/client/!.vscode/extensions.json
+/client/.idea
+/client/.DS_Store
+/client/*.suo
+/client/*.ntvs*
+/client/*.njsproj
+/client/*.sln
+/client/*.sw?
