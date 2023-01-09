@@ -6,12 +6,15 @@ import { FormContext } from '@/context/FormContext';
 import { isObject } from '@/utils/functions';
 import Logger, { LoggerType } from '@/utils/Logger';
 import FormInput from '@/components/FormInput';
+import useModal from '@/hooks/useModal';
 
 const Form = () => {
 	const [loading, error, form] = useFetch<TForm>('src/api/form.json');
 
 	const { create } = useContext(FormContext);
 	isObject<TForm>(form) && create(form);
+
+	const { append } = useModal();
 
 	const handleSubmit = (e: SyntheticEvent<HTMLFormElement, SubmitEvent>) => {
 		e.preventDefault();
@@ -20,7 +23,7 @@ const Form = () => {
 		if (!cls) return;
 
 		if (cls.indexOf('preview') >= 0) {
-			Logger.log('Preview', LoggerType.INFO);
+			append({ name: 'PreviewForm', data: {} });
 		} else {
 			Logger.log('Submit', LoggerType.INFO);
 		}
