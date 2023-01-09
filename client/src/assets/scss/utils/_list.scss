@@ -1,0 +1,16 @@
+.list {
+	display: flex;
+	flex-direction: row;
+
+	margin-bottom: 0.5rem;
+	&-left {
+		display: flex;
+		justify-content: flex-start;
+		font-weight: $fontWeightBold;
+		width: 110px;
+	}
+	&-right {
+		display: flex;
+		justify-content: flex-end;
+	}
+}

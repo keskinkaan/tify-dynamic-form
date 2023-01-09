@@ -1,0 +1,233 @@
+@mixin clearfix() {
+	content: '';
+	display: table;
+	clear: both;
+}
+
+@mixin opacity($value) {
+	$ie-value: $value * 100;
+	opacity: $value;
+	-ms-filter: 'progid:DXImageTransform.Microsoft.Alpha(Opacity=' + $ie-value + ')';
+	filter: alpha(opacity=$ie-value);
+}
+
+@mixin displayFlex() {
+	display: -webkit-flex;
+	display: -ms-flexbox;
+	display: -moz-flex;
+	display: -o-flex;
+	display: flex;
+}
+@mixin displayGrid() {
+	display: -webkit-grid;
+	display: -ms-grid;
+	display: -moz-grid;
+	display: -o-grid;
+	display: grid;
+}
+@mixin displayBox() {
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-box;
+	display: -o-box;
+	display: box;
+}
+
+@mixin flexWrap($value) {
+	-webkit-flex-wrap: $value;
+	-moz-flex-wrap: $value;
+	-ms-flex-wrap: $value;
+	-o-flex-wrap: $value;
+	flex-wrap: $value;
+}
+
+@mixin flexDirection($value) {
+	-webkit-flex-direction: $value;
+	-moz-flex-direction: $value;
+	-ms-flex-direction: $value;
+	-o-flex-direction: $value;
+	flex-direction: $value;
+}
+
+@mixin flex($value) {
+	-webkit-flex: $value;
+	-ms-flex: $value;
+	flex: $value;
+}
+
+@mixin justifyContent($content, $ms-cont) {
+	-webkit-justify-content: $content;
+	-ms-flex-pack: $ms-cont;
+	justify-content: $content;
+}
+
+@mixin alignContent($value) {
+	-webkit-align-content: $value;
+	-moz-align-content: $value;
+	-ms-align-content: $value;
+	-o-align-content: $value;
+	align-content: $value;
+}
+
+@mixin alignItem($align) {
+	-webkit-align-items: $align;
+	-ms-flex-align: $align;
+	align-items: $align;
+}
+
+@mixin boxSizing($value) {
+	-webkit-box-sizing: $value;
+	-moz-box-sizing: $value;
+	-o-box-sizing: $value;
+	box-sizing: $value;
+}
+
+@mixin borderRadius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin borderTopRadius($value) {
+	-webkit-border-top-right-radius: $value;
+	-webkit-border-top-left-radius: $value;
+	-moz-border-top-right-radius: $value;
+	-moz-border-top-left-radius: $value;
+	border-top-right-radius: $value;
+	border-top-left-radius: $value;
+}
+@mixin borderBottomRadius($value) {
+	-webkit-border-bottom-right-radius: $value;
+	-webkit-border-bottom-left-radius: $value;
+	-moz-border-bottom-right-radius: $value;
+	-moz-border-bottom-left-radius: $value;
+	border-bottom-right-radius: $value;
+	border-bottom-left-radius: $value;
+}
+@mixin borderLeftRadius($value) {
+	-webkit-border-bottom-left-radius: $value;
+	-webkit-border-top-left-radius: $value;
+	-moz-border-bottom-left-radius: $value;
+	-moz-border-top-left-radius: $value;
+	border-bottom-left-radius: $value;
+	border-top-left-radius: $value;
+}
+@mixin borderRightRadius($value) {
+	-webkit-border-bottom-right-radius: $value;
+	-webkit-border-top-right-radius: $value;
+	-moz-border-bottom-right-radius: $value;
+	-moz-border-top-right-radius: $value;
+	border-bottom-right-radius: $value;
+	border-top-right-radius: $value;
+}
+
+@mixin boxShadow($shadow) {
+	-webkit-box-shadow: $shadow;
+	-moz-box-shadow: $shadow;
+	box-shadow: $shadow;
+}
+
+@mixin transform($value) {
+	-webkit-transform: $value;
+	-moz-transform: $value;
+	-ms-transform: $value;
+	-o-transform: $value;
+	transform: $value;
+}
+@mixin transformOrgin($value) {
+	-webkit-transform-origin: $value;
+	-moz-transform-origin: $value;
+	-ms-transform-origin: $value;
+	-o-transform-origin: $value;
+	transform-origin: $value;
+}
+@mixin transformStyle($value) {
+	-webkit-transform-style: $value;
+	-moz-transform-style: $value;
+	-ms-transform-style: $value;
+	-o-transform-style: $value;
+	transform-style: $value;
+}
+@mixin transition($transition...) {
+	-webkit-transition: $transition;
+	-moz-transition: $transition;
+	-ms-transition: $transition;
+	-o-transition: $transition;
+	transition: $transition;
+}
+
+@mixin animation($animation) {
+	-webkit-animation: $animation;
+	-moz-animation: $animation;
+	-ms-animation: $animation;
+	-o-animation: $animation;
+	animation: $animation;
+}
+@mixin animationName($value) {
+	-webkit-animation-name: $value;
+	-moz-animation-name: $value;
+	-ms-animation-name: $value;
+	-o-animation-name: $value;
+	animation-name: $value;
+}
+@mixin animationDuration($value) {
+	-webkit-animation-duration: $value;
+	-moz-animation-duration: $value;
+	-ms-animation-duration: $value;
+	-o-animation-duration: $value;
+	animation-duration: $value;
+}
+@mixin animationDirection($value) {
+	-webkit-animation-direction: $value;
+	-moz-animation-direction: $value;
+	-ms-animation-direction: $value;
+	-o-animation-direction: $value;
+	animation-direction: $value;
+}
+@mixin animationFillMode($value) {
+	-webkit-animation-fill-mode: $value;
+	-moz-animation-fill-mode: $value;
+	-ms-animation-fill-mode: $value;
+	-o-animation-fill-mode: $value;
+	animation-fill-mode: $value;
+}
+@mixin animationIterationCount($value) {
+	-webkit-animation-iteration-count: $value;
+	-moz-animation-iteration-count: $value;
+	-ms-animation-iteration-count: $value;
+	-o-animation-iteration-count: $value;
+	animation-iteration-count: $value;
+}
+
+@mixin minMedia($value) {
+	@media (min-width: $value) {
+		@content;
+	}
+}
+
+@mixin maxMedia($value) {
+	@media (max-width: $value) {
+		@content;
+	}
+}
+
+@mixin betweenMedia($max, $min) {
+	@media (max-width: $max) and (min-width: $min) {
+		@content;
+	}
+}
+
+@mixin placeholder($value) {
+	&::-webkit-input-placeholder {
+		color: $value;
+	}
+	&:-moz-placeholder {
+		color: $value;
+	}
+	&::-moz-placeholder {
+		color: $value;
+	}
+	&:-ms-input-placeholder {
+		color: $value;
+	}
+}

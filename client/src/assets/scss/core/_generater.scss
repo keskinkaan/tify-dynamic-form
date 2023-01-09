@@ -1,0 +1,28 @@
+@mixin generateButtonStyling($buttonClassName, $bgColor, $txtColor, $hoverColor) {
+	.btn.#{$buttonClassName},
+	.btn.#{$buttonClassName}.disabled,
+	.btn.#{$buttonClassName}.disabled:hover,
+	.btn.#{$buttonClassName}.disabled:focus,
+	.btn.#{$buttonClassName}[disabled],
+	.btn.#{$buttonClassName}[disabled]:hover,
+	.btn.#{$buttonClassName}[disabled]:focus {
+		color: $txtColor;
+		background: $bgColor;
+		border-color: $bgColor;
+	}
+	.#{$buttonClassName}:hover,
+	.#{$buttonClassName}:focus,
+	.#{$buttonClassName}:active,
+	.#{$buttonClassName}.active,
+	.#{$buttonClassName}.active.focus,
+	.#{$buttonClassName}.active:focus,
+	.#{$buttonClassName}.active:hover,
+	.#{$buttonClassName}:active.focus,
+	.#{$buttonClassName}:active:focus,
+	.#{$buttonClassName}:active:hover,
+	.#{$buttonClassName}:not(:disabled):not(.disabled).active,
+	.#{$buttonClassName}:not(:disabled):not(.disabled):active {
+		background: $hoverColor;
+		border-color: $hoverColor;
+	}
+}

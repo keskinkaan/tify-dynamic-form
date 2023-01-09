@@ -1,0 +1,144 @@
+//* Form page color system
+
+$formPageBGColor: rgb(255, 252, 249);
+$formH2Color: rgb(26, 26, 26);
+$formPlaceholderColor: rgb(204, 204, 204);
+
+.form {
+	@include displayFlex();
+	@include flexDirection(column);
+	@include borderRadius(0.5rem); // 8px
+	@include boxShadow(0 11px 10px rgba(0, 0, 0, 0.149));
+	background-color: $formPageBGColor;
+	border: 1px solid rgb(235, 235, 235);
+	padding: 1.5rem; // 24px
+	width: 26.5rem; // 424px
+	@include maxMedia(36rem) {
+		width: 98%;
+		padding: 0 0.5rem;
+	}
+
+	&-header,
+	&-footer {
+		@include displayFlex();
+	}
+	&-header {
+		@include alignItem(center);
+		@include justifyContent(center, center);
+		font-family: $fontFamilyRoboto;
+		font-weight: $fontWeightBold;
+		color: $formH2Color;
+		padding: 0 0 1rem;
+	}
+	&-footer {
+		@include flexDirection(row);
+		@include justifyContent(space-between, space-between);
+		padding: 1rem 0 0;
+		&__submit,
+		&__preview {
+			@include borderRadius($borderRadiusBase); // 3px
+			font-family: $fontFamilyRoboto;
+			font-size: $fontSizeBase;
+			font-weight: $fontWeightBold;
+			outline: none;
+			padding: 0.875rem 3rem;
+			cursor: pointer;
+		}
+		&__submit {
+			background-color: $amaranthRed;
+			color: rgb(255, 255, 255);
+			border: none;
+		}
+		&__preview {
+			background-color: rgb(255, 255, 255);
+			color: $amaranthRed;
+			border: 1px solid $amaranthRed;
+		}
+	}
+	&-body {
+		@include displayFlex();
+		@include flexDirection(column);
+		@include alignItem(flex-start);
+		&__label {
+			font-weight: $fontWeightBold;
+			font-size: $fontSizeL;
+			display: block;
+			margin: 0.5rem 0;
+			color: rgb(85, 85, 85);
+		}
+		&__control {
+			@include borderRadius($borderRadiusBase); // 3px
+			@include placeholder($formPlaceholderColor);
+			font-size: $fontSizeL;
+			display: block;
+			width: 100%;
+			padding: 0.75rem;
+			border: 1px solid rgb(204, 204, 204);
+			margin-bottom: 0.5rem;
+			outline: none;
+			&:invalid[data-focused='true'] ~ span {
+				display: block;
+			}
+		}
+		select {
+			cursor: pointer;
+			appearance: none;
+			@include chevronDownIco(d61f27, 14, 14);
+			background-repeat: no-repeat;
+			background-position: right 0.8rem center;
+		}
+		&__check {
+			@include displayFlex();
+			@include flexDirection(row);
+			@include alignItem(flex-start);
+			@include justifyContent(flex-start, start);
+			line-height: 1.4;
+			cursor: pointer;
+			margin-bottom: 0.25rem; // 2px
+			&-input {
+				border: 1px solid $amaranthRed;
+				float: left;
+				width: 1rem; // 16px
+				height: 1rem; // 16px
+				vertical-align: top;
+				margin-right: 0.5rem; // 8px
+			}
+			&-input[type='radio'] {
+				@include borderRadius(50%);
+			}
+			&-label {
+				font-size: $fontSizeXL;
+			}
+		}
+		&__error {
+			@include animationName(FadeIn);
+			@include animationDuration(0.4s);
+			color: $amaranthRed;
+			font-size: $fontSizeM;
+			display: none;
+			margin-bottom: 0.5rem;
+		}
+	}
+}
+
+// .loading {
+// 	background-color: $formPageBGColor;
+// 	position: relative;
+// 	text-indent: -9999px;
+// 	&:before {
+// 		@include animationName(rotation);
+// 		@include animationDuration(0.4s);
+// 		@include animationFillMode(linear);
+// 		@include animationIterationCount(infinite);
+// 		@include loadingIco(111111, ffcc00, 18, 18);
+// 		display: block;
+// 		position: absolute;
+// 		margin: -10px 0 0 -10px;
+// 		background-size: 18px;
+// 		width: 18px;
+// 		height: 18px;
+// 		top: 50%;
+// 		left: 50%;
+// 		content: '';
+// 	}
+// }

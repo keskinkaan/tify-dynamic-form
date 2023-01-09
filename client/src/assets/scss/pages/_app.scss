@@ -1,0 +1,6 @@
+.app {
+	@include displayFlex();
+	@include alignItem(center);
+	@include justifyContent(center, center);
+	height: 100vh;
+}
