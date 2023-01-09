@@ -76,7 +76,7 @@
 				"name": "profilePicture",
 				"label": "Profile Picture",
 				"value": "",
-				"required": false,
+				"required": true,
 				"errorMessage": "Please upload a profile picture!"
 			}
 		]

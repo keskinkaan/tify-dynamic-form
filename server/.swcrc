@@ -1,0 +1,46 @@
+{
+   "minify": true,
+   "jsc": {
+      "minify": {
+         "compress": {
+            "unused": true
+         },
+         "mangle": true
+      },
+      "parser": {
+         "syntax": "typescript",
+         "decarator": true,
+         "dynamicImport": true
+      },
+      "transform": {
+         "decoratorMetadata": true
+      },
+      "target": "es2022",
+      "baseUrl": "./build",
+      "paths": {
+         "@/config/*": ["./config/*"],
+         "@/utils/*": ["./api/utils/*"],
+         "@/interfaces/*": ["./api/interfaces/*"],
+         "@/middlewares/*": ["./api/middlewares/*"],
+         "@/validations/*": ["./api/validations/*"],
+         "@/controllers/*": ["./api/controllers/*"],
+         "@/services/*": ["./api/services/*"],
+         "@/models/*": ["./api/models/*"]
+      },
+      "keepClassNames": true,
+      "loose": true
+   },
+   "module": {
+      "type": "nodenext",
+      "strict": true,
+      "strictMode": true,
+      "lazy": false,
+      "noInterop": true
+   },
+   "sourceMaps": "inline",
+   "env": {
+      "targets": {
+         "node": 18
+      }
+   }
+}

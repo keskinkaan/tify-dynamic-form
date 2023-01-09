@@ -1,4 +1,4 @@
-import { SyntheticEvent, useContext } from 'react';
+import { SyntheticEvent, useContext, useState } from 'react';
 import useFetch from '@/hooks/useFetch';
 import { TForm } from '@/types/FormType';
 import { FormContext } from '@/context/FormContext';
@@ -10,8 +10,9 @@ import useModal from '@/hooks/useModal';
 
 const Form = () => {
 	const [loading, error, form] = useFetch<TForm>('src/api/form.json');
+	const [success, setSuccess] = useState(false);
 
-	const { create } = useContext(FormContext);
+	const { create, get } = useContext(FormContext);
 	isObject<TForm>(form) && create(form);
 
 	const { append } = useModal();
@@ -25,7 +26,36 @@ const Form = () => {
 		if (cls.indexOf('preview') >= 0) {
 			append({ name: 'PreviewForm', data: {} });
 		} else {
-			Logger.log('Submit', LoggerType.INFO);
+			setSuccess(true);
+			const data = get();
+			const sendData = {};
+			data.fields.map((field, i) => {
+				return Object.assign(sendData, { [field.name]: field.value });
+			});
+
+			fetch('http://localhost:3002/api/form', {
+				method: 'POST',
+				headers: {
+					Accept: 'application/json',
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify(sendData),
+			})
+				.then((response) => {
+					if (!response.ok) {
+						throw new Error(`HTTP error! Status: ${response.status}`);
+					} else {
+						return response.json();
+					}
+				})
+				.then((result) => {
+					console.log(result);
+					setSuccess(false);
+				})
+				.catch((err: Error) => {
+					setSuccess(false);
+					Logger.log(err.message, LoggerType.ERROR);
+				});
 		}
 	};
 
@@ -46,7 +76,7 @@ const Form = () => {
 							<button className="form-footer__preview" type="submit">
 								Preview
 							</button>
-							<button className="form-footer__submit" type="submit">
+							<button className="form-footer__submit" type="submit" disabled={success ? true : false}>
 								Submit
 							</button>
 						</div>

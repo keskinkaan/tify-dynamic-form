@@ -42,13 +42,35 @@ $formPlaceholderColor: rgb(204, 204, 204);
 			font-weight: $fontWeightBold;
 			outline: none;
 			padding: 0.875rem 3rem;
+			min-width: 10rem;
 			cursor: pointer;
 		}
 		&__submit {
 			background-color: $amaranthRed;
 			color: rgb(255, 255, 255);
 			border: none;
+			&:disabled {
+				font-size: 0;
+				position: relative;
+				&:before {
+					@include animationName(rotation);
+					@include animationDuration(0.4s);
+					@include animationFillMode(linear);
+					@include animationIterationCount(infinite);
+					@include loadingIco(111111, ffcc00, 18, 18);
+					display: block;
+					position: absolute;
+					margin: -10px 0 0 -10px;
+					background-size: 18px;
+					width: 18px;
+					height: 18px;
+					top: 50%;
+					left: 50%;
+					content: '';
+				}
+			}
 		}
+
 		&__preview {
 			background-color: rgb(255, 255, 255);
 			color: $amaranthRed;

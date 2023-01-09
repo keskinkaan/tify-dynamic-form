@@ -1,0 +1,26 @@
+{
+  service: 'Services-CreateForm',
+  level: 'error',
+  message: ' __dirname is not defined',
+  stack: 'ReferenceError: __dirname is not defined\n' +
+    '    at default.create (file:///Users/kaankeskin/dev/projects/tify-dynamic-form/server/build/api/services/Form.js:1:211)\n' +
+    '    at #s (file:///Users/kaankeskin/dev/projects/tify-dynamic-form/server/build/api/controllers/Form.js:1:594)\n' +
+    '    at Layer.handle [as handle_request] (/Users/kaankeskin/dev/projects/tify-dynamic-form/server/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at next (/Users/kaankeskin/dev/projects/tify-dynamic-form/server/node_modules/express/lib/router/route.js:144:13)\n' +
+    '    at file:///Users/kaankeskin/dev/projects/tify-dynamic-form/server/build/api/middlewares/validations.js:1:202\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  timestamp: '10-01-2023 00:20:23'
+}
+{
+  service: 'Services-CreateForm',
+  level: 'error',
+  message: ' __dirname is not defined',
+  stack: 'ReferenceError: __dirname is not defined\n' +
+    '    at default.create (file:///Users/kaankeskin/dev/projects/tify-dynamic-form/server/build/api/services/Form.js:1:241)\n' +
+    '    at #s (file:///Users/kaankeskin/dev/projects/tify-dynamic-form/server/build/api/controllers/Form.js:1:594)\n' +
+    '    at Layer.handle [as handle_request] (/Users/kaankeskin/dev/projects/tify-dynamic-form/server/node_modules/express/lib/router/layer.js:95:5)\n' +
+    '    at next (/Users/kaankeskin/dev/projects/tify-dynamic-form/server/node_modules/express/lib/router/route.js:144:13)\n' +
+    '    at file:///Users/kaankeskin/dev/projects/tify-dynamic-form/server/build/api/middlewares/validations.js:1:202\n' +
+    '    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)',
+  timestamp: '10-01-2023 00:26:10'
+}

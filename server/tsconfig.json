@@ -1,0 +1,43 @@
+{
+	"$schema": "https://json.schemastore.org/tsconfig",
+	"extends": "@tsconfig/node18/tsconfig.json",
+	"display": "Node 18",
+
+	"compilerOptions": {
+		"lib": ["ESNext"],
+		"module": "ESNext",
+		"target": "ESNext",
+
+		"allowJs": true,
+		"checkJs": false,
+
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"strictPropertyInitialization": false,
+
+		"outDir": "./build",
+		"rootDir": "./src",
+
+		"baseUrl": "./src",
+		"paths": {
+			"@/config/*": ["./config/*"],
+			"@/utils/*": ["api/utils/*"],
+			"@/interfaces/*": ["api/interfaces/*"],
+			"@/middlewares/*": ["api/middlewares/*"],
+			"@/validations/*": ["api/validations/*"],
+			"@/controllers/*": ["api/controllers/*"],
+			"@/services/*": ["api/services/*"],
+			"@/models/*": ["api/models/*"]
+		},
+
+		"declaration": true,
+		"strict": true,
+		"esModuleInterop": true,
+		"skipLibCheck": true,
+		"forceConsistentCasingInFileNames": true,
+		"moduleResolution": "node",
+		"isolatedModules": true
+	},
+	"include": ["src"],
+	"exclude": ["node_modules"]
+}
