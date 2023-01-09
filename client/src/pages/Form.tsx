@@ -1,12 +1,17 @@
-import FormInput from '@/components/FormInput';
+import { SyntheticEvent, useContext } from 'react';
 import useFetch from '@/hooks/useFetch';
 import { TForm } from '@/types/FormType';
+import { FormContext } from '@/context/FormContext';
+
 import { isObject } from '@/utils/functions';
 import Logger, { LoggerType } from '@/utils/Logger';
-import { SyntheticEvent } from 'react';
+import FormInput from '@/components/FormInput';
 
 const Form = () => {
 	const [loading, error, form] = useFetch<TForm>('src/api/form.json');
+
+	const { create } = useContext(FormContext);
+	isObject<TForm>(form) && create(form);
 
 	const handleSubmit = (e: SyntheticEvent<HTMLFormElement, SubmitEvent>) => {
 		e.preventDefault();

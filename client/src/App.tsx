@@ -1,10 +1,13 @@
 import Form from '@/pages/Form';
+import FormContextProvider from '@/context/FormContext';
 
 function App() {
 	return (
-		<div className="app">
-			<Form />
-		</div>
+		<FormContextProvider>
+			<div className="app">
+				<Form />
+			</div>
+		</FormContextProvider>
 	);
 }
 
