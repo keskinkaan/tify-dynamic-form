@@ -152,9 +152,10 @@ const FormInput = (props: TFormElement) => {
 	};
 	return (
 		<div className="form-body">
-			{label}
-			{required ? '*' : ''}
-			<label className="form-body__label" htmlFor="{name}"></label>
+			<label className="form-body__label" htmlFor="{name}">
+				{label}
+				{required ? '*' : ''}
+			</label>
 			{renderFieldInputSwitch(type)}
 		</div>
 	);
