@@ -4,7 +4,6 @@ import { TForm } from '@/types/FormType';
 import { FormContext } from '@/context/FormContext';
 
 import { isObject } from '@/utils/functions';
-import Logger, { LoggerType } from '@/utils/Logger';
 import FormInput from '@/components/FormInput';
 import useModal from '@/hooks/useModal';
 
@@ -49,12 +48,10 @@ const Form = () => {
 					}
 				})
 				.then((result) => {
-					console.log(result);
 					setSuccess(false);
 				})
 				.catch((err: Error) => {
 					setSuccess(false);
-					Logger.log(err.message, LoggerType.ERROR);
 				});
 		}
 	};
