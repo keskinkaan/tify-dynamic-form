@@ -16,3 +16,7 @@
 /client/*.njsproj
 /client/*.sln
 /client/*.sw?
+
+# Env file 
+/client/.env
+/server/.env
