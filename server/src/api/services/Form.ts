@@ -3,7 +3,7 @@ import Logger from '@/config/log/Logger.js';
 import fs from 'fs';
 import path from 'path';
 
-class CountryService {
+class FormService {
 	public create = async (form: IForm): Promise<IForm | Error> => {
 		try {
 			fs.writeFile('data.json', JSON.stringify(form), (err) => {
@@ -20,4 +20,4 @@ class CountryService {
 	};
 }
 
-export default CountryService;
+export default FormService;
