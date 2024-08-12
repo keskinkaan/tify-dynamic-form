@@ -430,4 +430,4 @@ export default useModal;
 
 ## License
 
-Copyright © 2022 Segmentify UK Ltd [Terms & Conditions](https://www.segmentify.com/terms-conditions)
+This project is licensed under the MIT License.
